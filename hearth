@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int age;
+    double cholesterol, bloodPressure;
+
+    cout << "Enter your age: ";
+    cin >> age;
+
+    cout << "Enter your cholesterol level (in mg/dL): ";
+    cin >> cholesterol;
+
+    cout << "Enter your blood pressure (systolic): ";
+    cin >> bloodPressure;
+
+    // Check risk factors
+    bool ageRisk = (age > 45);
+    bool cholesterolRisk = (cholesterol > 200); // Generalized threshold
+    bool bloodPressureRisk = (bloodPressure > 130); // Generalized threshold
+
+    // Simulate risk assessment
+    bool highRisk = (ageRisk && (cholesterolRisk || bloodPressureRisk));
+
+    // Display risk assessment
+    cout << "\n*** Heart Attack Risk Assessment ***\n";
+    if (highRisk) {
+        cout << "You are at a higher risk of a heart attack based on these factors.\n";
+    } else {
+        cout << "Based on these factors, you are at a relatively lower risk of a heart attack.\n";
+    }
+
+    return 0;
+}
